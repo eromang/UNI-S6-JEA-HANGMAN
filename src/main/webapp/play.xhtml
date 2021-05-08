@@ -21,9 +21,13 @@
                 <h:outputLabel value="Last attempt letter:"/>
                 <h:outputText id="lastAttemptedLetter" value="#{play.lastAttemptedLetter}"/>
                 <br/>
-                <h:outputLabel value="Party status:"/>
+                <h:outputLabel value="Word to discover:"/>
                 <h:outputText id="gameDisplay" value="#{play.gameDisplay}" style="color: red; font-size: 200%"/>
                 <br/>
+                <h:outputLabel value="Word to discover in reverse:"/>
+                <h:outputText id="gameDisplayReverse" value="#{play.gameDisplayReverse}" style="color: red; font-size: 200%"/>
+                <br/>
+                <h:outputLabel value="Enter a letter:"/>
                 <h:inputText id="enteredLetter" value="#{play.enteredLetter}" alt="test" size="1" maxlength="1"/>
                 <br/>
                 <h:commandButton id="attempt" action="#{play.attempt}" value="Attempt !" style="padding: 5px; border-color: green"/>
@@ -32,10 +36,11 @@
 
             <h:panelGrid id="winfield" rendered="#{play.winner}" style="background-color:#BFF1B5; border: thick solid green; padding: 20px;">
                 <h:outputLabel value="Success ! You discovered the word !"/>
-                <h:outputText id="attemptsTotal2" value="#{play.randomWord}"/>
+                <h:outputText id="randomWord" value="#{play.randomWord}"/>
+                <h:outputText id="reversedRandomWord" value="#{play.reversedRandomWord}"/>
                 <br/>
                 <h:outputLabel value="Total number of attempts:"/>
-                <h:outputText id="generatedWord" value="#{play.attemptsTotal}"/>
+                <h:outputText id="attemptsTotal2" value="#{play.attemptsTotal}"/>
                 <br/>
                 <h:commandButton id="cancel2" action="#{main.stopGame}" value="Restart the game"  style=" padding: 5px; border-color: green"/>
             </h:panelGrid>

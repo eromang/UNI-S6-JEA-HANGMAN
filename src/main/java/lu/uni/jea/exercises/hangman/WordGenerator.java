@@ -34,7 +34,7 @@ public class WordGenerator {
 
             String line = "";
             while ((line = bf.readLine()) != null) {
-                wordList.add(line);
+                wordList.add(line.toUpperCase());
             }
             System.out.println("Added successfully words in : " + fileName);
         } catch (Exception e) {

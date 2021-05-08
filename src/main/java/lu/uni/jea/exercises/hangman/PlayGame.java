@@ -30,7 +30,9 @@ public class PlayGame  implements Serializable {
 
     private WordGenerator words;
     private String randomWord;
+    private String reversedRandomWord;
     private Character randomWordLetter;
+    private Character randomReverseWordLetter;
     private LinkedHashMap<String, Integer> randomWordLetters = new LinkedHashMap<>();
 
     private String enteredLetter;
@@ -40,8 +42,11 @@ public class PlayGame  implements Serializable {
     private int totalLetters;
     private int totalUniqLetters;
     private int guessedLettersTotal;
+
     private boolean winner;
+
     private String gameDisplay;
+    private String gameDisplayReverse;
 
     private static final String PLAY = "play";
 
@@ -62,6 +67,8 @@ public class PlayGame  implements Serializable {
         System.out.println("-----------");
 
         totalLetters = randomWord.length();
+
+        setReversedRandomWord(randomWord);
 
         // Put all letters into a HashMap
         // with key is the letter and 0 or 1 as value to map if guessed or not
@@ -169,7 +176,7 @@ public class PlayGame  implements Serializable {
         if(attemptsTotal == 0) {
 
             System.out.println("-----------");
-            System.out.println("Initial display");
+            System.out.println("Initial display gameDisplay");
             System.out.println("-----------");
 
             for (int i = 0; i < totalLetters; i++) {
@@ -207,6 +214,58 @@ public class PlayGame  implements Serializable {
         enteredLetter = "";
         gameDisplay = buffer.toString();
         return gameDisplay;
+    }
+
+    /*
+    Get game DisplayReverse
+    */
+
+    public String getGameDisplayReverse() {
+
+        // Get the input
+        StringBuffer buffer = new StringBuffer();
+
+        // If no attempts, to initialize the display
+        if(attemptsTotal == 0) {
+
+            System.out.println("-----------");
+            System.out.println("Initial display gameDisplayReverse");
+            System.out.println("-----------");
+
+            for (int i = 0; i < totalLetters; i++) {
+                buffer.append("*");
+            }
+
+        } else {
+
+            // Graph for all already guessed letters
+            for(int i = 0; i < totalLetters; i++) {
+
+                System.out.println("-----------");
+                System.out.println("Build display for : " + reversedRandomWord.charAt(i));
+                System.out.println("-----------");
+
+                randomReverseWordLetter = reversedRandomWord.charAt(i);
+
+                if(randomWordLetters.containsKey(randomReverseWordLetter.toString())) {
+
+                    int randomWordLetterValue = randomWordLetters.get(randomReverseWordLetter.toString());
+
+                    System.out.println(randomReverseWordLetter + " is in the HashMap with value " + randomWordLetterValue);
+
+                    if(randomWordLetterValue == 1) {
+                        System.out.println(randomReverseWordLetter + " is in the HashMap and guessed. He is displayed");
+                        buffer.append(reversedRandomWord.charAt(i));
+                    } else {
+                        System.out.println(randomReverseWordLetter + " is not in the HashMap and is *");
+                        buffer.append('*');
+                    }
+                }
+            }
+        }
+
+        gameDisplayReverse = buffer.toString();
+        return gameDisplayReverse;
     }
 
     /*
@@ -262,5 +321,21 @@ public class PlayGame  implements Serializable {
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
+    }
+
+    public void setReversedRandomWord(String randomWord) {
+
+        byte[] strAsByteArray = randomWord.getBytes();
+        byte[] result = new byte[strAsByteArray.length];
+
+        for (int i = 0; i < strAsByteArray.length; i++) {
+            result[i] = strAsByteArray[strAsByteArray.length - i - 1];
+        }
+
+        this.reversedRandomWord = new String(result);
+    }
+
+    public String getReversedRandomWord() {
+        return reversedRandomWord;
     }
 }
