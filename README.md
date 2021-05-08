@@ -14,5 +14,8 @@
 4. Click "Attempt!" to submit the entered letter
 5. Click "Stop the game" to restart the game
 
+## Build
 
+1. cd in the zip repository
+2. mvn clean package wildfly:deploy
 
