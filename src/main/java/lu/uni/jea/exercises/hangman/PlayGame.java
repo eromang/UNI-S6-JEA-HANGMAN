@@ -97,13 +97,19 @@ public class PlayGame  implements Serializable {
         winner = false;
         enteredLetter = "";
 
-
     }
 
     public String attempt() {
         attemptsTotal++;
-        if (randomWord.equals(enteredLetter)) {
-            winner = true;
+
+        System.out.println("-----------");
+        System.out.println("Total attempts are : " + attemptsTotal);
+        System.out.println("Total guessed letters are : " + guessedLettersTotal);
+        System.out.println("Total uniq letters are : " + totalUniqLetters);
+        System.out.println("-----------");
+
+        if(guessedLettersTotal == (totalUniqLetters - 1)) {
+            winner =true;
         }
         return PLAY;
     }

@@ -24,16 +24,20 @@
                 <h:outputLabel value="Party status:"/>
                 <h:outputText id="gameDisplay" value="#{play.gameDisplay}" style="color: red; font-size: 200%"/>
                 <br/>
-                <h:inputText id="enteredLetter" value="#{play.enteredLetter}" alt="test" size="#{play.size}" />
+                <h:inputText id="enteredLetter" value="#{play.enteredLetter}" alt="test" size="1" maxlength="1"/>
                 <br/>
                 <h:commandButton id="attempt" action="#{play.attempt}" value="Attempt !" style="padding: 5px; border-color: green"/>
                 <h:commandButton id="cancel" action="#{main.stopGame}" value="Stop the game"  style=" padding: 5px; border-color: green"/>
             </h:panelGrid>
 
             <h:panelGrid id="winfield" rendered="#{play.winner}" style="background-color:#BFF1B5; border: thick solid green; padding: 20px;">
-                <h:outputLabel value="Total number of attempts:"/>
-                <h:outputText id="attemptsTotal2" value="#{play.attemptsTotal}"/>
+                <h:outputLabel value="Success ! You discovered the word !"/>
+                <h:outputText id="attemptsTotal2" value="#{play.randomWord}"/>
                 <br/>
+                <h:outputLabel value="Total number of attempts:"/>
+                <h:outputText id="generatedWord" value="#{play.attemptsTotal}"/>
+                <br/>
+                <h:commandButton id="cancel2" action="#{main.stopGame}" value="Restart the game"  style=" padding: 5px; border-color: green"/>
             </h:panelGrid>
 
         </h:form>
