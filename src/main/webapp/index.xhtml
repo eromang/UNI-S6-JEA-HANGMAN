@@ -9,7 +9,7 @@
 <ui:composition template="basic.xhtml">
 
     <ui:define name="top">
-        Hangman - ERO
+        Hangman - ERO - #{main.randomWord}
     </ui:define>
 
     <ui:define name="content">
@@ -21,6 +21,10 @@
         </h:panelGrid>
     </h:form>
     </ui:define>
+
+    <p style="color:red">
+        <h:outputText id ="mytext1" value="#{main.randomWord}" />
+    </p>
 
     <h:panelGroup rendered="#{not empty facesContext.messages}">
         <h:messages/>

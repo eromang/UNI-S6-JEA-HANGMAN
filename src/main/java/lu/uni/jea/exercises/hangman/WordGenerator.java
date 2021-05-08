@@ -1,5 +1,6 @@
 package lu.uni.jea.exercises.hangman;
 
+import javax.security.auth.login.LoginException;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -25,6 +26,8 @@ public class WordGenerator {
     /* Constructor */
     public WordGenerator() {
 
+        System.out.println("File : " + fileName);
+
         // Open the words file and add it to the ArrayList
         try (InputStream in = getClass().getResourceAsStream(fileName);
              BufferedReader bf = new BufferedReader(new InputStreamReader(in))) {
@@ -33,6 +36,7 @@ public class WordGenerator {
             while ((line = bf.readLine()) != null) {
                 wordList.add(line);
             }
+            System.out.println("Added successfully words in : " + fileName);
         } catch (Exception e) {
             System.out.println("File access error: " + fileName);
             System.out.println(" Error message: " + e.getMessage());
@@ -42,10 +46,9 @@ public class WordGenerator {
     public String getRandomWord() {
         // If the ArrayList is empty return "No Data"
         if (wordList.isEmpty())
-            return "No Data";
-        // else return
-
-        return wordList.get((int) (Math.random() * wordList.size()));
+            return "No data";
+        else
+            return wordList.get((int) (Math.random() * wordList.size()));
     }
 
     // Public method to return the full words list

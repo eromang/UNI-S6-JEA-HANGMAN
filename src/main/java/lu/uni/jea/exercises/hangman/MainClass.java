@@ -2,6 +2,7 @@ package lu.uni.jea.exercises.hangman;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.logging.Logger;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ApplicationScoped;
@@ -24,6 +25,7 @@ public class MainClass implements Serializable  {
 
     private static final String SUCCESS = "success";
     private static final String FAIL = "fail";
+    private static final Logger logger = Logger.getLogger("loginBean");
 
     private WordGenerator words;
     private String randomWord;
@@ -39,5 +41,14 @@ public class MainClass implements Serializable  {
             return FAIL;
         }
         return SUCCESS;
+    }
+
+    /** Getters and Setters */
+    public String getRandomWord() {
+        return this.randomWord;
+    }
+
+    public void setRandomWord(String randomWord) {
+        this.randomWord = randomWord;
     }
 }

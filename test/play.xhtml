@@ -9,22 +9,18 @@
 <ui:composition template="basic.xhtml">
 
     <ui:define name="top">
-        Hangman - ERO - #{main.randomWord}
+        Hangman - ERO
     </ui:define>
 
     <ui:define name="content">
-    <h:form id="homeform">
-        <h:panelGrid id="homepanel">
-            <h:outputLabel value="What do you desire to do?"/><br/>
-            <h:commandButton id="enterword" action="#{main.enterword}" value="Enter a Word" style=" padding: 5px; border-color: green"/>
-            <h:commandButton id="play" action="#{main.play}" value="Play" style=" padding: 5px; border-color: green"/>
-        </h:panelGrid>
-    </h:form>
+        <h:form id="homeform">
+            <h:panelGrid id="homepanel">
+                <h:outputLabel value="What do you desire to do?"/><br/>
+                <h:commandButton id="enterword" action="#{main.enterword}" value="Enter a Word" style=" padding: 5px; border-color: green"/>
+                <h:commandButton id="play" action="#{main.play}" value="Play" style=" padding: 5px; border-color: green"/>
+            </h:panelGrid>
+        </h:form>
     </ui:define>
-
-    <p style="color:red">
-        <h:outputText id ="mytext1" value="#{main.randomWord}" />
-    </p>
 
     <h:panelGroup rendered="#{not empty facesContext.messages}">
         <h:messages/>
