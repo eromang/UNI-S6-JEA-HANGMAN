@@ -45,10 +45,12 @@ public class WordGenerator {
 
     public String getRandomWord() {
         // If the ArrayList is empty return "No Data"
-        if (wordList.isEmpty())
+        if (wordList.isEmpty()) {
+            System.out.println("No words in " + fileName);
             return "No data";
-        else
+        } else {
             return wordList.get((int) (Math.random() * wordList.size()));
+        }
     }
 
     // Public method to return the full words list

@@ -1,14 +1,17 @@
 package lu.uni.jea.exercises.hangman;
 
-import java.io.Serializable;
-import java.util.List;
-import java.util.logging.Logger;
-import javax.enterprise.context.SessionScoped;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ApplicationScoped;
-import javax.inject.Named;
 
-import lu.uni.jea.exercises.hangman.WordGenerator;
+
+import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.inject.Named;
+import java.io.Serializable;
+
+/**
+ * Bean lives as long as the HTTP session lives.
+ * It gets created upon the first HTTP request involving this bean in the session
+ * and gets destroyed when the HTTP session is invalidated.
+ */
 
 /**
  *
@@ -21,34 +24,24 @@ import lu.uni.jea.exercises.hangman.WordGenerator;
 @SessionScoped
 @Named("main")
 
-public class MainClass implements Serializable  {
+public class MainClass implements Serializable {
 
-    private static final String SUCCESS = "success";
-    private static final String FAIL = "fail";
-    private static final Logger logger = Logger.getLogger("loginBean");
+    private static final String PLAY = "play";
+    private static final String STOP = "stop";
 
-    private WordGenerator words;
-    private String randomWord;
-
-    /** Creates new instance of MainClass */
     public MainClass() {
-        this.words = new WordGenerator();
-        this.randomWord = words.getRandomWord();
+
     }
 
     public String play() {
-        if (words.isEmpty()) {
-            return FAIL;
-        }
-        return SUCCESS;
+        System.out.println("Click on play button success");
+        return PLAY;
     }
 
-    /** Getters and Setters */
-    public String getRandomWord() {
-        return this.randomWord;
+    public String stopGame() {
+        System.out.println("Invalidate session to start new game");
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return STOP;
     }
 
-    public void setRandomWord(String randomWord) {
-        this.randomWord = randomWord;
-    }
 }

@@ -9,22 +9,35 @@
 <ui:composition template="basic.xhtml">
 
     <ui:define name="top">
-        Hangman - ERO
+        Random word is : #{play.randomWord}
     </ui:define>
 
     <ui:define name="content">
-        <h:form id="homeform">
-            <h:panelGrid id="homepanel">
-                <h:outputLabel value="What do you desire to do?"/><br/>
-                <h:commandButton id="enterword" action="#{main.enterword}" value="Enter a Word" style=" padding: 5px; border-color: green"/>
-                <h:commandButton id="play" action="#{main.play}" value="Play" style=" padding: 5px; border-color: green"/>
+        <h:form id="playform">
+            <h:panelGrid id="playfield" rendered="#{!play.winner}" style="background-color:#BFF1B5; border: thick solid green; padding: 20px;">
+                <h:outputLabel value="Total number of attempts:"/>
+                <h:outputText id="attemptsTotal" value="#{play.attemptsTotal}"/>
+                <br/>
+                <h:outputLabel value="Last attempt letter:"/>
+                <h:outputText id="lastAttemptedLetter" value="#{play.lastAttemptedLetter}"/>
+                <br/>
+                <h:outputLabel value="Party status:"/>
+                <h:outputText id="gameDisplay" value="#{play.gameDisplay}" style="color: red; font-size: 200%"/>
+                <br/>
+                <h:inputText id="enteredLetter" value="#{play.enteredLetter}" alt="test" size="#{play.size}" />
+                <br/>
+                <h:commandButton id="attempt" action="#{play.attempt}" value="Attempt !" style="padding: 5px; border-color: green"/>
+                <h:commandButton id="cancel" action="#{main.stopGame}" value="Stop the game"  style=" padding: 5px; border-color: green"/>
             </h:panelGrid>
+
+            <h:panelGrid id="winfield" rendered="#{play.winner}" style="background-color:#BFF1B5; border: thick solid green; padding: 20px;">
+                <h:outputLabel value="Total number of attempts:"/>
+                <h:outputText id="attemptsTotal2" value="#{play.attemptsTotal}"/>
+                <br/>
+            </h:panelGrid>
+
         </h:form>
     </ui:define>
-
-    <h:panelGroup rendered="#{not empty facesContext.messages}">
-        <h:messages/>
-    </h:panelGroup>
 
 </ui:composition>
 </html>

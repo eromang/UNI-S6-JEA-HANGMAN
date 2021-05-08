@@ -9,26 +9,17 @@
 <ui:composition template="basic.xhtml">
 
     <ui:define name="top">
-        Hangman - ERO - #{main.randomWord}
+        UNI S6 JEA - Exercise 1 - Hangman - Eric ROMANG
     </ui:define>
 
     <ui:define name="content">
     <h:form id="homeform">
         <h:panelGrid id="homepanel">
-            <h:outputLabel value="What do you desire to do?"/><br/>
-            <h:commandButton id="enterword" action="#{main.enterword}" value="Enter a Word" style=" padding: 5px; border-color: green"/>
-            <h:commandButton id="play" action="#{main.play}" value="Play" style=" padding: 5px; border-color: green"/>
+            <h:outputLabel value="Do you want to play to hangman?"/><br/>
+            <h:commandButton id="play" action="#{main.play}" value="Play"/>
         </h:panelGrid>
     </h:form>
     </ui:define>
-
-    <p style="color:red">
-        <h:outputText id ="mytext1" value="#{main.randomWord}" />
-    </p>
-
-    <h:panelGroup rendered="#{not empty facesContext.messages}">
-        <h:messages/>
-    </h:panelGroup>
 
 </ui:composition>
 </html>

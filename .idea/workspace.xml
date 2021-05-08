@@ -5,11 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11c33b33-af09-406e-a32a-7a9fa52fa6b5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lu/uni/jea/exercises/hangman/PlayGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lu/uni/jea/exercises/hangman/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lu/uni/jea/exercises/hangman/MainClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lu/uni/jea/exercises/hangman/WordGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lu/uni/jea/exercises/hangman/WordGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/basic.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/basic.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/res/words.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/res/words.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/play.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/play.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hangman-1.0-SNAPSHOT/WEB-INF/faces-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/hangman-1.0-SNAPSHOT/WEB-INF/faces-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hangman-1.0-SNAPSHOT/basic.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/hangman-1.0-SNAPSHOT/basic.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hangman-1.0-SNAPSHOT/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/hangman-1.0-SNAPSHOT/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hangman-1.0-SNAPSHOT/play.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/hangman-1.0-SNAPSHOT/play.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +44,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
@@ -75,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620114287264</updated>
-      <workItem from="1620114293872" duration="10437000" />
+      <workItem from="1620114293872" duration="23238000" />
     </task>
     <servers />
   </component>
